@@ -1,0 +1,318 @@
+/* ==========================================================================
+   pages.css : shared layout & components for sub-pages in website/pages/
+   - pages/inti-student-mobility-2026.html
+   - pages/publications.html
+   Inherits tokens and components from global.css and project.css
+   ========================================================================== */
+
+/* ---------- Narrative prose inside case-main ---------- */
+.prose {
+  display: grid;
+  gap: 18px;
+  color: var(--text-2);
+  font-size: 17.5px;
+  line-height: 1.78;
+}
+.prose strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ---------- Highlight strip (4-column stats) ---------- */
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 8px 0 36px;
+}
+.stat-tile {
+  padding: 22px 20px;
+  border-radius: var(--r-md);
+}
+.stat-tile b {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(28px, 2.5vw, 38px);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--accent);
+}
+.stat-tile span {
+  display: block;
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--text-2);
+}
+
+/* ---------- Section blocks on sub-pages ---------- */
+.page-section {
+  padding: 44px 0 12px;
+}
+.page-section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px 24px;
+  margin-bottom: 24px;
+}
+.page-section-head h2 {
+  font-size: clamp(26px, 2.6vw, 36px);
+  color: var(--accent);
+  letter-spacing: -0.03em;
+}
+.page-section-head p {
+  color: var(--muted);
+  font-size: 15.5px;
+}
+
+/* ---------- Certificate + details showcase ---------- */
+.cert-showcase {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 28px;
+  padding: 28px;
+  align-items: center;
+}
+.cert-frame {
+  display: block;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-md);
+}
+.cert-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.cert-info {
+  display: grid;
+  gap: 16px;
+}
+.cert-info h3 {
+  font-size: clamp(22px, 2vw, 28px);
+  letter-spacing: -0.02em;
+}
+.cert-meta-list {
+  display: grid;
+  gap: 10px;
+  padding-top: 6px;
+  border-top: 1px solid var(--line);
+  font-size: 15px;
+  color: var(--text-2);
+}
+.cert-meta-list div {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 10px;
+}
+.cert-meta-list dt {
+  color: var(--muted);
+  font-weight: 500;
+}
+.cert-meta-list dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ---------- Photo gallery grid (Award & Ceremony Photos) ---------- */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+.photo-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--r-lg);
+}
+.photo-card.photo-wide {
+  grid-column: 1 / -1;
+}
+.photo-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #dcd9d2;
+}
+.photo-card.photo-wide .photo-media {
+  aspect-ratio: 20 / 10;
+}
+.photo-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.photo-caption {
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.photo-caption strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 17px;
+  color: var(--text);
+}
+.photo-caption span {
+  display: block;
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* ---------- Newsletter feature split ---------- */
+.newsletter-split {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 32px;
+  padding: 30px;
+  align-items: start;
+}
+.newsletter-preview {
+  display: block;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #fff;
+  box-shadow: var(--shadow-md);
+}
+.newsletter-preview img {
+  width: 100%;
+  height: auto;
+}
+.newsletter-body {
+  display: grid;
+  gap: 16px;
+}
+.newsletter-body h3 {
+  font-size: clamp(22px, 2vw, 28px);
+  line-height: 1.25;
+}
+.newsletter-quote {
+  padding: 18px 20px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg-soft);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  font-size: 15.5px;
+  color: var(--text-2);
+  display: grid;
+  gap: 10px;
+}
+
+/* ---------- Publication full article cards ---------- */
+.pub-stack {
+  display: grid;
+  gap: 36px;
+  padding: 16px 0 24px;
+}
+.pub-detail {
+  padding: clamp(24px, 3.5vw, 40px);
+  display: grid;
+  gap: 28px;
+  scroll-margin-top: 96px;
+}
+.pub-detail-head {
+  display: grid;
+  gap: 14px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line);
+}
+.pub-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.pub-detail-title {
+  font-size: clamp(24px, 2.6vw, 36px);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+.pub-authors {
+  font-size: 16px;
+  color: var(--text-2);
+}
+.pub-authors strong {
+  color: var(--accent-600);
+  font-weight: 700;
+}
+
+.pub-detail-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 32px;
+  align-items: start;
+}
+.pub-detail-info {
+  display: grid;
+  gap: 20px;
+}
+.pub-kv {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.pub-kv-item {
+  padding: 14px 16px;
+  border-radius: var(--r-sm);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--line);
+}
+.pub-kv-item dt {
+  font-size: 12.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  font-weight: 600;
+}
+.pub-kv-item dd {
+  margin: 4px 0 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.35;
+  color: var(--text);
+}
+.pub-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 1023px) {
+  .cert-showcase,
+  .newsletter-split,
+  .pub-detail-grid {
+    grid-template-columns: 1fr;
+  }
+  .stat-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .photo-grid,
+  .pub-kv {
+    grid-template-columns: 1fr;
+  }
+  .cert-showcase,
+  .newsletter-split,
+  .pub-detail {
+    padding: 20px;
+  }
+  .cert-meta-list div {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
